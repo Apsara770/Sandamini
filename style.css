@@ -144,6 +144,30 @@ nav a:hover::after {
   width: 100%;
 }
 
+/* Mobile Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Logo left, menu toggle right */
+    align-items: center;
+    padding: 0 1rem; /* optional padding */
+  }
+
+  .navbar nav {
+    display: none; /* hide regular nav links on mobile */
+  }
+
+  .menu-toggle {
+    font-size: 1.8rem; /* make the hamburger bigger */
+    cursor: pointer;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
 /* Home Section */
 .home-section {
   position: relative;
