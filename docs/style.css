@@ -32,57 +32,6 @@ body {
 
 /* Navbar */
 
-/* MOBILE NAV */
-.menu-toggle {
-  display: none;
-  font-size: 1.6rem;
-  color: #fff;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-.mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 75%;
-  height: 100vh;
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(15px);
-  padding: 4rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  transition: 0.4s ease;
-  z-index: 1099;
-}
-
-.mobile-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  padding-bottom: 0.8rem;
-}
-
-.mobile-nav.active {
-  right: 0;
-}
-
-.close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* Show only on mobile */
-@media(max-width: 900px) {
-  nav { display: none; }
-  .menu-toggle { display: block; }
-}
 
 .navbar {
   position: fixed;
