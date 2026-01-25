@@ -615,15 +615,12 @@ nav a:hover::after {
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    gap: 1.2rem;
-    padding: 1.2rem;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  nav ul {
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  .navbar nav {
+    display: none;
   }
 
   .intro-text h1 {
@@ -1046,11 +1043,12 @@ hr {
 @media (max-width: 576px) {
 
   .navbar {
-    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  nav ul {
-    gap: 0.8rem;
+  .navbar nav {
+    display: none;
   }
 
   .intro-text h1 {
