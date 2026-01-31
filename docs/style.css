@@ -946,6 +946,37 @@ hr {
     overflow: hidden;
 }
 
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.project-btn {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+  background: #2563eb;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #1e40af;
+}
+
+.project-btn.demo {
+  background: #10b981;
+}
+
+.project-btn.demo:hover {
+  background: #047857;
+}
+
 .project-tags {
     display: flex;
     flex-wrap: wrap;
