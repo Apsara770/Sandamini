@@ -524,8 +524,8 @@ nav a:hover::after {
   position: relative;
   z-index: 5;
   padding: 6rem 5%;
-  background: var(--bg-light);
-  backdrop-filter: blur(10px);
+  /* background: var(--bg-light);
+  backdrop-filter: blur(10px); */
 }
 
 .contact-container {
