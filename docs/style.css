@@ -353,7 +353,6 @@ nav a:hover::after {
 }
 
 .summary-card {
-  background: #111827;
   border-radius: 16px;
   padding: 2rem;
   text-align: center;
