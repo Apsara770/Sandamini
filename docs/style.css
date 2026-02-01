@@ -156,6 +156,14 @@ nav a:hover::after {
   line-height: 1.7;
 }
 
+.typing {
+  color: #38bdf8;
+  font-weight: 600;
+  border-right: 2px solid #38bdf8;
+  padding-right: 5px;
+  white-space: nowrap;
+}
+
 .buttons {
   display: flex;
   gap: 1.2rem;
