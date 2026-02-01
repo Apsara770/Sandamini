@@ -45,32 +45,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Typing effect
-  const roles = ["DESIGNER", "DEVELOPER", "CREATOR"];
-  let roleIndex = 0, charIndex = 0;
-  const roleElement = document.getElementById("role");
+const roles = [
+  "Associate Software Developer",
+  "Full-Stack Developer",
+  "QA-Aware Engineer",
+  "Content Creator"
+];
 
-  function typeRole() {
-    if (!roleElement) return;
-    if (charIndex < roles[roleIndex].length) {
-      roleElement.textContent += roles[roleIndex].charAt(charIndex++);
-      setTimeout(typeRole, 150);
-    } else {
-      setTimeout(eraseRole, 2000);
-    }
+let i = 0;
+let j = 0;
+let currentRole = '';
+let isDeleting = false;
+const typingSpeed = 100;
+
+function type() {
+  const txt = roles[i];
+  if (isDeleting) {
+    currentRole = txt.substring(0, j--);
+  } else {
+    currentRole = txt.substring(0, j++);
   }
+  document.querySelector('.typing').textContent = currentRole;
 
-  function eraseRole() {
-    if (charIndex > 0) {
-      roleElement.textContent = roles[roleIndex].substring(0, --charIndex);
-      setTimeout(eraseRole, 100);
-    } else {
-      roleIndex = (roleIndex + 1) % roles.length;
-      setTimeout(typeRole, 500);
-    }
+  if (!isDeleting && j === txt.length + 1) {
+    isDeleting = true;
+    setTimeout(type, 1000); // pause at full word
+  } else if (isDeleting && j === 0) {
+    isDeleting = false;
+    i = (i + 1) % roles.length;
+    setTimeout(type, 500);
+  } else {
+    setTimeout(type, typingSpeed);
   }
+}
 
-  typeRole();
+type();
+
 
   // Theme toggle
   const toggle = document.getElementById("toggle");
