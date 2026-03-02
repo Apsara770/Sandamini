@@ -11,21 +11,41 @@
 <body>
   <div id="particles-js"></div>
 
-  <header class="navbar">
-   <div class="logo">
-  <span class="logo-text">SANDAMINI</span>
+<header class="navbar">
+  <div class="logo">
+    <span class="logo-text">SANDAMINI</span>
+  </div>
+
+  <!-- Desktop Nav -->
+  <nav class="desktop-nav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skillstec">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  
+  <!-- Hamburger Icon -->
+  <div class="menu-toggle" id="menuToggle">
+    <i class="fas fa-bars"></i>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="close-btn" id="closeNav">
+    <i class="fas fa-times"></i>
+  </div>
+
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#skillstec">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
 </div>
-   <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <!-- <li><a href="#education">Education</a></li> -->
-        <li><a href="#skillstec">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
 
   <!-- Home Section -->
@@ -57,12 +77,9 @@
             <a href="https://www.linkedin.com/in/sandamini-weerasekara-631521348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-link" aria-label="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
             </a>
-             <a href="#" class="social-link" aria-label="Twitter">
-              <i class="fab fa-twitter"></i> 
-            </a>
-            <!-- <a href="https://www.instagram.com/nimshara_imbulgoda?igsh=bzZ5dm41M2cxMzVv&utm_source=qr" class="social-link" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>  -->
+          <a href="https://youtube.com/@sandaminiweerasekara?si=8etYc7sItuM0NK_K" class="social-link" aria-label="YouTube" target="_blank">
+  <i class="fab fa-youtube"></i>
+</a>
           </div>
         </div>
         
@@ -102,7 +119,7 @@
 
     <div class="summary-card">
       <i class="fas fa-layer-group"></i>
-      <h3>5+ Projects</h3>
+      <h3>10+ Projects</h3>
       <p>Real-World Applications</p>
     </div>
 
@@ -141,40 +158,40 @@
         <div class="skill-item">
           <div class="skill-info">
             <span class="skill-name">JavaScript</span>
-            <span class="skill-percent">70%</span>
+            <span class="skill-percent">80%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 70%;"></div>
+           <div class="progress-bar" data-width="80%"></div>
           </div>
         </div>
 
         <div class="skill-item">
           <div class="skill-info">
             <span class="skill-name">TypeScript</span>
-            <span class="skill-percent">75%</span>
+            <span class="skill-percent">70%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 75%;"></div>
+            <div class="progress-bar" data-width="70%"></div>
           </div>
         </div>
 
         <div class="skill-item">
           <div class="skill-info">
             <span class="skill-name">Java</span>
-            <span class="skill-percent">80%</span>
+            <span class="skill-percent">60%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 80%;"></div>
+           <div class="progress-bar" data-width="60%"></div>
           </div>
         </div>
 
         <div class="skill-item">
           <div class="skill-info">
             <span class="skill-name">C#</span>
-            <span class="skill-percent">75%</span>
+            <span class="skill-percent">85%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 75%;"></div>
+           <div class="progress-bar" data-width="85%"></div>
           </div>
         </div>
 
@@ -184,7 +201,17 @@
             <span class="skill-percent">80%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 80%;"></div>
+        <div class="progress-bar" data-width="80%"></div>
+          </div>
+        </div>
+
+                <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name">Python</span>
+            <span class="skill-percent">70%</span>
+          </div>
+          <div class="progress-container">
+           <div class="progress-bar" data-width="70%"></div>
           </div>
         </div>
       </div>
@@ -202,7 +229,7 @@
             <span class="skill-percent">75%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 75%;"></div>
+       <div class="progress-bar" data-width="75%"></div>
           </div>
         </div>
 
@@ -212,7 +239,7 @@
             <span class="skill-percent">70%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 70%;"></div>
+        <div class="progress-bar" data-width="70%"></div>
           </div>
         </div>
 
@@ -222,7 +249,7 @@
             <span class="skill-percent">95%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 95%;"></div>
+          <div class="progress-bar" data-width="95%"></div>
           </div>
         </div>
 
@@ -232,17 +259,27 @@
             <span class="skill-percent">70%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 70%;"></div>
+          <div class="progress-bar" data-width="70%"></div>
           </div>
         </div>
 
         <div class="skill-item">
           <div class="skill-info">
             <span class="skill-name">.NET</span>
-            <span class="skill-percent">77%</span>
+            <span class="skill-percent">85%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 77%;"></div>
+          <div class="progress-bar" data-width="85%"></div>
+          </div>
+        </div>
+
+             <div class="skill-item">
+          <div class="skill-info">
+            <span class="skill-name">PHP</span>
+            <span class="skill-percent">95%</span>
+          </div>
+          <div class="progress-container">
+      <div class="progress-bar" data-width="95%"></div>
           </div>
         </div>
       </div>
@@ -257,30 +294,30 @@
         <div class="skill-item">
           <div class="skill-info">
             <span class="skill-name">MongoDB</span>
-            <span class="skill-percent">75%</span>
+            <span class="skill-percent">78%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 75%;"></div>
+           <div class="progress-bar" data-width="78%"></div>
           </div>
         </div>
 
           <div class="skill-item">
           <div class="skill-info">
             <span class="skill-name">MSSQL</span>
-            <span class="skill-percent">80%</span>
+            <span class="skill-percent">88%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 80%;"></div>
+        <div class="progress-bar" data-width="88%"></div>
           </div>
         </div>
 
         <div class="skill-item">
           <div class="skill-info">
             <span class="skill-name">MySQL</span>
-            <span class="skill-percent">85%</span>
+            <span class="skill-percent">90%</span>
           </div>
           <div class="progress-container">
-            <div class="progress-bar" style="width: 85%;"></div>
+         <div class="progress-bar" data-width="90%"></div>
           </div>
         </div>
       </div>
@@ -322,148 +359,6 @@
     </div>
   </div>
 </section>
-
-
-<!-- <section id="projects" class="projects-section">
-  <div class="container">
-    <header>
-      <h1>Solutions I’ve Built</h1>
-    </header>
-<h2>Desktop Solutions</h2>
-<div class="projects-grid">
-
-  <div class="project-card featured">
-    <img src="POS.png" alt="POS System" class="project-image">
-    <div class="project-content">
-      <div class="featured-badge">Featured</div>
-      <h3 class="project-title">POS System</h3>
-      <p class="project-description">
-        A full-featured Point of Sale desktop system developed for retail and restaurant environments. 
-        Includes billing, invoice generation, customer management, payment tracking, stock updates, 
-        and secure user authentication for efficient daily business operations.
-      </p>
-      <div class="project-tags">
-        <span class="tag">C#</span>
-        <span class="tag">.NET</span>
-        <span class="tag">SQL Server</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <img src="MGS.png" alt="Inventory Management System" class="project-image">
-    <div class="project-content">
-      <h3 class="project-title">Inventory Management System</h3>
-      <p class="project-description">
-        A desktop-based inventory management solution designed to manage product stock, suppliers, 
-        purchases, and sales records. Provides real-time stock monitoring, low-stock alerts, 
-        reporting, and role-based access control for better business decision making.
-      </p>
-      <div class="project-tags">
-        <span class="tag">C#</span>
-        <span class="tag">.NET</span>
-        <span class="tag">SQL Server</span>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-
-    <hr>
-
-    <h2>Modern Web Solutions</h2>
-    <div class="projects-grid">
-    <div class="project-card">
-  <img src="rest.jpeg" alt="Online Food Ordering System" class="project-image">
-  <div class="project-content">
-    <h3 class="project-title">Online Food Ordering System</h3>
-    <p class="project-description">
-      A full-stack web-based food ordering system designed for restaurants to manage online orders, 
-      digital payments, menu management, customer accounts, and order tracking. Includes an admin dashboard, 
-      real-time order updates, and secure payment handling for smooth restaurant operations.
-    </p>
-    <div class="project-tags">
-      <span class="tag">React</span>
-      <span class="tag">MongoDB</span>
-      <span class="tag">Node.js</span>
-      <span class="tag">Stripe</span>
-    </div>
-    <div class="project-links">
-  <a href="https://github.com/Apsara770/waa-inn-restaurant" class="project-btn">
-    <i class="fab fa-github"></i> GitHub
-  </a>
-
-  <a href="" class="project-btn demo">
-    <i class="fas fa-globe"></i> Live Demo
-  </a>
-</div>
-
-  </div>
-</div>
-
-
-<div class="project-card">
-  <img src="pt.png" alt="Portfolio Websites" class="project-image">
-  <div class="project-content">
-    <h3 class="project-title">Portfolio Websites</h3>
-    <p class="project-description">
-      Designed and developed modern, responsive personal portfolio websites to showcase skills, 
-      projects, education, and contact information. Includes interactive UI components, 
-      smooth animations, and contact form integrations to improve professional online presence.
-    </p>
-    <div class="project-tags">
-      <span class="tag">PHP</span>
-      <span class="tag">MySQL</span>
-      <span class="tag">CSS</span>
-       <span class="tag">JavaScript</span>
-    </div>
-
-        <div class="project-links">
-  <a href="https://github.com/Apsara770/fitness-portfolio-kali" class="project-btn">
-    <i class="fab fa-github"></i> GitHub
-  </a>
-
-  <a href="https://www.kaalifitness.com/" target="https://www.kaalifitness.com/" class="project-btn demo">
-    <i class="fas fa-globe"></i> Live Demo
-  </a>
-</div>
-  </div>
-</div>
-
-
-<div class="project-card">
-  <img src="an.jpeg" alt="Inventory & Invoice System" class="project-image">
-  <div class="project-content">
-    <h3 class="project-title">Inventory & Invoice System</h3>
-    <p class="project-description">
-      A web-based inventory and invoice management system designed to handle product records, 
-      customer billing, invoice generation, payment tracking, and stock updates. 
-    </p>
-    <div class="project-tags">
-      <span class="tag">TypeScript</span>
-      <span class="tag">Angular</span>
-       <span class="tag">.NET</span>
-      <span class="tag">SQL Server</span>
-      <span class="tag">Bootstrap</span>
-    </div>
-
-            <div class="project-links">
-  <a href="https://github.com/Apsara770/UD-Intern-Task" class="project-btn">
-    <i class="fab fa-github"></i> GitHub
-  </a>
-
-  <a href=" "  class="project-btn demo">
-    <i class="fas fa-globe"></i> Live Demo
-  </a>
-</div>
-  </div>
-</div>
-    
-  </div>
-
-  
-</section> -->
 
   <!-- Projects Section -->
 <section id="projects" class="projects-section">
@@ -636,9 +531,10 @@
           <a href="https://www.linkedin.com/in/sandamini-weerasekara-631521348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-link" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="#" class="social-link" aria-label="Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
+                <a href="https://youtube.com/@sandaminiweerasekara?si=8etYc7sItuM0NK_K" class="social-link" aria-label="YouTube" target="_blank">
+  <i class="fab fa-youtube"></i>
+</a>
+     
         
         </div>
       </div>
@@ -650,7 +546,7 @@
   <input type="text" id="subject" placeholder="Subject" required>
   <textarea id="message" placeholder="Your Message" required></textarea>
 
-  <button type="submit" class="submit-btn">Send WhatsApp Message</button>
+  <button type="submit" class="submit-btn">Send Message</button>
 
   <div class="form-message" style="display:none; margin-top:1rem; padding:0.5rem; border-radius:4px;"></div>
 </form>
@@ -681,15 +577,15 @@
     <div class="footer-social">
       <h4>Connect</h4>
       <div class="social-icons">
-        <a href="https://github.com/Apsara770" aria-label="GitHub">
+        <a href="https://github.com/Apsara770" class="social-link"  aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/sandamini-weerasekara-631521348" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/sandamini-weerasekara-631521348" class="social-link"  aria-label="LinkedIn">
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="#" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
+    <a href="https://youtube.com/@sandaminiweerasekara?si=8etYc7sItuM0NK_K" class="social-link" aria-label="YouTube" target="_blank">
+  <i class="fab fa-youtube"></i>
+</a>
       </div>
     </div>
 
