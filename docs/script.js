@@ -1,13 +1,14 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Greeting update
+  // 1️⃣ Greeting Update
   const greet = document.querySelector(".intro-text p");
-  const hr = new Date().getHours();
-  if (hr < 12) greet.textContent = "Good Morning, I'm";
-  else if (hr < 18) greet.textContent = "Good Afternoon, I'm";
-  else greet.textContent = "Good Evening, I'm";
+  if (greet) {
+    const hr = new Date().getHours();
+    if (hr < 12) greet.textContent = "Good Morning, I'm";
+    else if (hr < 18) greet.textContent = "Good Afternoon, I'm";
+    else greet.textContent = "Good Evening, I'm";
+  }
 
-  // Initialize particlesJS
+  // 2️⃣ Initialize ParticlesJS
   if (window.particlesJS) {
     particlesJS("particles-js", {
       particles: {
@@ -23,12 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
           opacity: 0.3,
           width: 1,
         },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: "none",
-          out_mode: "bounce",
-        },
+        move: { enable: true, speed: 2, direction: "none", out_mode: "bounce" },
       },
       interactivity: {
         detect_on: "canvas",
@@ -45,171 +41,136 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-const roles = [
-  "Associate Software Developer",
-  "Full-Stack Developer",
-  "QA-Aware Engineer",
-  "Content Creator"
-];
+  // 3️⃣ Typing Animation
+  const roles = ["Associate Software Developer", "Full-Stack Developer", "QA-Aware Engineer", "Content Creator"];
+  let i = 0, j = 0, currentRole = '', isDeleting = false;
+  const typingSpeed = 100;
 
-let i = 0;
-let j = 0;
-let currentRole = '';
-let isDeleting = false;
-const typingSpeed = 100;
+  function type() {
+    const txt = roles[i];
+    if (isDeleting) currentRole = txt.substring(0, j--);
+    else currentRole = txt.substring(0, j++);
+    
+    const typingElem = document.querySelector('.typing');
+    if (typingElem) typingElem.textContent = currentRole;
 
-function type() {
-  const txt = roles[i];
-  if (isDeleting) {
-    currentRole = txt.substring(0, j--);
-  } else {
-    currentRole = txt.substring(0, j++);
+    if (!isDeleting && j === txt.length + 1) {
+      isDeleting = true;
+      setTimeout(type, 1000);
+    } else if (isDeleting && j === 0) {
+      isDeleting = false;
+      i = (i + 1) % roles.length;
+      setTimeout(type, 500);
+    } else {
+      setTimeout(type, typingSpeed);
+    }
   }
-  document.querySelector('.typing').textContent = currentRole;
+  type();
 
-  if (!isDeleting && j === txt.length + 1) {
-    isDeleting = true;
-    setTimeout(type, 1000); // pause at full word
-  } else if (isDeleting && j === 0) {
-    isDeleting = false;
-    i = (i + 1) % roles.length;
-    setTimeout(type, 500);
-  } else {
-    setTimeout(type, typingSpeed);
-  }
-}
+  // 4️⃣ Mobile Toggle
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileNav = document.getElementById("mobileNav");
+  const closeNav = document.getElementById("closeNav");
 
-type();
-
-
-  // Theme toggle
-  const toggle = document.getElementById("toggle");
-  if (toggle) {
-    toggle.addEventListener("change", () => {
-      document.body.classList.toggle("light-mode", toggle.checked);
+  if (menuToggle && mobileNav && closeNav) {
+    menuToggle.addEventListener("click", () => mobileNav.classList.add("active"));
+    closeNav.addEventListener("click", () => mobileNav.classList.remove("active"));
+    document.querySelectorAll(".mobile-nav a").forEach(link => {
+      link.addEventListener("click", () => mobileNav.classList.remove("active"));
     });
   }
 
-  // Skill bar animations
-  document.querySelectorAll(".bar .fill").forEach(bar => {
-    const width = bar.style.width;
-    bar.style.width = "0";
-    setTimeout(() => {
-      bar.style.transition = "width 2s";
-      bar.style.width = width;
-    }, 100);
-  });
+  // 5️⃣ Skill Bar Animation
+  const skillSection = document.querySelector("#skillstec");
+  const progressBars = document.querySelectorAll(".progress-bar");
+  if (skillSection && progressBars.length > 0) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          progressBars.forEach(bar => {
+            const targetWidth = bar.getAttribute("data-width");
+            bar.style.width = targetWidth;
+          });
+          observer.unobserve(skillSection);
+        }
+      });
+    }, { threshold: 0.4 });
+    observer.observe(skillSection);
+  }
 
-  // Scroll navigation activation
+  // 6️⃣ Scroll Navigation Activation
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".navbar a");
-
   window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop - 100) {
-        current = section.id;
-      }
+      if (pageYOffset >= sectionTop - 100) current = section.id;
     });
-
     navLinks.forEach(link => {
       link.classList.remove("active");
-      if (link.getAttribute("href") === `#${current}`) {
-        link.classList.add("active");
-      }
+      if (link.getAttribute("href") === `#${current}`) link.classList.add("active");
     });
   });
 
-  // Smooth scroll
+  // 7️⃣ Smooth Scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", e => {
       e.preventDefault();
       const target = document.querySelector(anchor.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
+      if (target) target.scrollIntoView({ behavior: "smooth" });
     });
   });
 
- const whatsappForm = document.getElementById("whatsappForm");
-const messageDiv = whatsappForm.querySelector(".form-message");
-const submitBtn = whatsappForm.querySelector(".submit-btn");
+  // 8️⃣ WhatsApp Form
+  const whatsappForm = document.getElementById("whatsappForm");
+  if (whatsappForm) {
+    const messageDiv = whatsappForm.querySelector(".form-message");
+    const submitBtn = whatsappForm.querySelector(".submit-btn");
 
-whatsappForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+    whatsappForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim();
+      const message = document.getElementById("message").value.trim();
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const subject = document.getElementById("subject").value.trim();
-  const message = document.getElementById("message").value.trim();
+      const text = `*New Portfolio Message*%0AName: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}`;
+      submitBtn.innerHTML = "Opening WhatsApp...";
+      submitBtn.disabled = true;
 
-  const text = `*New Portfolio Message*%0A
-Name: ${name}%0A
-Email: ${email}%0A
-Subject: ${subject}%0A
-Message: ${message}`;
+      const phone = "94766327039";
+      window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
 
-  submitBtn.innerHTML = "Opening WhatsApp...";
-  submitBtn.disabled = true;
+      if (messageDiv) {
+        messageDiv.style.display = "block";
+        messageDiv.style.background = "#dcfce7";
+        messageDiv.style.color = "#166534";
+        messageDiv.textContent = "✅ WhatsApp opened successfully!";
+      }
 
-  const phone = "94705676045"; // your number
+      whatsappForm.reset();
+      setTimeout(() => {
+        submitBtn.innerHTML = "Send WhatsApp Message";
+        submitBtn.disabled = false;
+      }, 3000);
+    });
+  }
 
-  window.open(`https://wa.me/${phone}?text=${text}`, "_blank");
-
-  messageDiv.style.display = "block";
-  messageDiv.style.background = "#dcfce7";
-  messageDiv.style.color = "#166534";
-  messageDiv.textContent = "✅ WhatsApp opened successfully!";
-  whatsappForm.reset();
-
-  setTimeout(() => {
-    submitBtn.innerHTML = "Send WhatsApp Message";
-    submitBtn.disabled = false;
-  }, 3000);
-});
-
-
+  // 9️⃣ Project Filter
   const filterBtns = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // Remove active class from all buttons
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const filter = btn.dataset.filter;
-
-    projectCards.forEach(card => {
-      if (filter === 'all' || card.dataset.category === filter) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
+  const projectCards = document.querySelectorAll('.project-card');
+  if (filterBtns.length && projectCards.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) card.style.display = 'block';
+          else card.style.display = 'none';
+        });
+      });
     });
-  });
+  }
 });
-
-  // Spinner CSS
-  const style = document.createElement('style');
-  style.textContent = `
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-  `;
-  document.head.appendChild(style);
-});
-
-const menuToggle = document.getElementById("menuToggle");
-const mobileNav = document.getElementById("mobileNav");
-const closeNav = document.getElementById("closeNav");
-
-menuToggle.onclick = () => mobileNav.classList.add("active");
-closeNav.onclick = () => mobileNav.classList.remove("active");
-
-document.querySelectorAll(".mobile-nav a").forEach(link => {
-  link.onclick = () => mobileNav.classList.remove("active");
-});
-
-
